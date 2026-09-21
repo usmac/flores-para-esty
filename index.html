@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flores para ti 🌻</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Pétalos -->
+    <div class="petalos"></div>
+
+    <!-- Pantalla principal -->
+    <main class="contenedor">
+
+        <section class="hero">
+
+            <p class="pequeno">UN PEQUEÑO REGALO PARA TI HERMOSA</p>
+
+            <h1>
+                Flores amarillas
+                <span>🌻</span>
+            </h1>
+
+            <p class="subtitulo">
+                Porque eres muy importante para mi, nunca lo dudes.
+            </p>
+
+            <!-- RAMO -->
+<div class="ramo">
+
+    <svg class="ramo-svg"
+         viewBox="0 0 400 500"
+         xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+
+            <!-- Sombra -->
+            <filter id="sombra">
+                <feDropShadow
+                    dx="0"
+                    dy="8"
+                    stdDeviation="8"
+                    flood-opacity=".35"/>
+            </filter>
+
+            <!-- Degradado de pétalos -->
+            <radialGradient id="petaloAmarillo">
+                <stop offset="0%" stop-color="#ffe878"/>
+                <stop offset="70%" stop-color="#f4c52e"/>
+                <stop offset="100%" stop-color="#d59d13"/>
+            </radialGradient>
+
+            <!-- Centro de flor -->
+            <radialGradient id="centroFlor">
+                <stop offset="0%" stop-color="#8f5722"/>
+                <stop offset="100%" stop-color="#4d2c15"/>
+            </radialGradient>
+
+        </defs>
+
+
+        <!-- =========================
+             TALLOS
+        ========================== -->
+
+        <g class="tallos-svg">
+
+            <path d="M200 430 Q175 300 110 130"/>
+            <path d="M200 430 Q190 290 170 95"/>
+            <path d="M200 430 Q200 270 205 65"/>
+            <path d="M200 430 Q215 290 250 115"/>
+            <path d="M200 430 Q235 310 305 165"/>
+            <path d="M200 430 Q160 300 65 185"/>
+
+        </g>
+
+
+        <!-- =========================
+             HOJAS
+        ========================== -->
+
+        <g class="hojas-svg">
+
+            <path d="M150 330
+                     Q95 285 75 320
+                     Q105 350 150 330Z"/>
+
+            <path d="M250 335
+                     Q305 285 330 320
+                     Q300 350 250 335Z"/>
+
+            <path d="M170 365
+                     Q120 335 105 370
+                     Q135 395 170 365Z"/>
+
+            <path d="M230 370
+                     Q280 335 300 370
+                     Q270 400 230 370Z"/>
+
+        </g>
+
+
+        <!-- =========================
+             FLORES
+        ========================== -->
+
+        <!-- Flor izquierda -->
+        <g class="flor-svg" transform="translate(105 125)">
+
+            <g class="petalos-svg">
+                <ellipse cy="-38" rx="20" ry="38"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(45)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(90)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(135)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(180)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(225)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(270)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(315)"/>
+            </g>
+
+            <circle r="27" class="centro-svg"/>
+
+        </g>
+
+
+        <!-- Flor central grande -->
+        <g class="flor-svg flor-grande" transform="translate(205 65)">
+
+            <g class="petalos-svg">
+                <ellipse cy="-48" rx="24" ry="46"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(45)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(90)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(135)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(180)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(225)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(270)"/>
+                <ellipse cy="-48" rx="24" ry="46" transform="rotate(315)"/>
+            </g>
+
+            <circle r="32" class="centro-svg"/>
+
+        </g>
+
+
+        <!-- Flor derecha -->
+        <g class="flor-svg" transform="translate(300 155)">
+
+            <g class="petalos-svg">
+                <ellipse cy="-38" rx="20" ry="38"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(45)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(90)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(135)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(180)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(225)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(270)"/>
+                <ellipse cy="-38" rx="20" ry="38" transform="rotate(315)"/>
+            </g>
+
+            <circle r="27" class="centro-svg"/>
+
+        </g>
+
+
+        <!-- Flor izquierda pequeña -->
+        <g class="flor-svg flor-pequena" transform="translate(60 190)">
+
+            <g class="petalos-svg">
+                <ellipse cy="-30" rx="16" ry="30"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(60)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(120)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(180)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(240)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(300)"/>
+            </g>
+
+            <circle r="21" class="centro-svg"/>
+
+        </g>
+
+
+        <!-- Flor derecha pequeña -->
+        <g class="flor-svg flor-pequena" transform="translate(335 185)">
+
+            <g class="petalos-svg">
+                <ellipse cy="-30" rx="16" ry="30"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(60)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(120)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(180)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(240)"/>
+                <ellipse cy="-30" rx="16" ry="30" transform="rotate(300)"/>
+            </g>
+
+            <circle r="21" class="centro-svg"/>
+
+        </g>
+
+
+<!-- DETALLE CHAINSAW MAN -->
+
+<!-- =========================
+     TULIPANES
+========================= -->
+
+<!-- Tulipán izquierdo -->
+<g class="tulipan-svg" transform="translate(135 175)">
+
+    <!-- Tallo -->
+    <path
+        class="tallo-tulipan"
+        d="M0 145 Q-5 65 0 0"/>
+
+    <!-- Hoja -->
+    <path
+        class="hoja-tulipan"
+        d="M-2 55
+           Q-40 35 -48 55
+           Q-30 75 -2 65Z"/>
+
+    <!-- Flor -->
+    <path
+    class="flor-tulipan"
+    d="M-30 0
+       Q-28 25 -15 35
+       Q-5 42 0 30
+       Q5 42 15 35
+       Q28 25 30 0
+       Q20 10 10 5
+       Q5 2 0 -8
+       Q-5 2 -10 5
+       Q-20 10 -30 0Z"/>
+
+</g>
+
+
+<!-- Tulipán central -->
+<g class="tulipan-svg" transform="translate(200 190)">
+
+    <!-- Tallo -->
+    <path
+        class="tallo-tulipan"
+        d="M0 130 Q5 55 0 0"/>
+
+    <!-- Hoja izquierda -->
+    <path
+        class="hoja-tulipan"
+        d="M0 55
+           Q-35 30 -45 50
+           Q-25 72 0 65Z"/>
+
+    <!-- Hoja derecha -->
+    <path
+        class="hoja-tulipan"
+        d="M0 60
+           Q35 35 43 55
+           Q25 75 0 68Z"/>
+
+    <!-- Flor -->
+    <path
+    class="flor-tulipan"
+    d="M-30 0
+       Q-28 25 -15 35
+       Q-5 42 0 30
+       Q5 42 15 35
+       Q28 25 30 0
+       Q20 10 10 5
+       Q5 2 0 -8
+       Q-5 2 -10 5
+       Q-20 10 -30 0Z"/>
+
+</g>
+
+
+<!-- Tulipán derecho -->
+<g class="tulipan-svg" transform="translate(265 180)">
+
+    <!-- Tallo -->
+    <path
+        class="tallo-tulipan"
+        d="M0 140 Q5 65 0 0"/>
+
+    <!-- Hoja -->
+    <path
+        class="hoja-tulipan"
+        d="M0 55
+           Q35 32 45 52
+           Q25 75 0 65Z"/>
+
+    <!-- Flor -->
+    <path
+    class="flor-tulipan"
+    d="M-30 0
+       Q-28 25 -15 35
+       Q-5 42 0 30
+       Q5 42 15 35
+       Q28 25 30 0
+       Q20 10 10 5
+       Q5 2 0 -8
+       Q-5 2 -10 5
+       Q-20 10 -30 0Z"/>
+
+</g>
+
+        <!-- =========================
+             ENVOLTURA
+        ========================== -->
+
+        <path
+            class="envoltura-svg"
+            d="M75 280
+               L325 280
+               L275 475
+               L200 420
+               L125 475Z"/>
+
+
+        <!-- Papel interior -->
+        <path
+            class="papel-interior"
+            d="M95 280
+               L305 280
+               L260 455
+               L200 410
+               L140 455Z"/>
+
+
+        <!-- =========================
+             LISTÓN
+        ========================== -->
+
+        <g class="liston-svg">
+
+            <path d="M200 355
+                     C160 330 135 350 145 375
+                     C160 395 185 375 200 360Z"/>
+
+            <path d="M200 355
+                     C240 330 265 350 255 375
+                     C240 395 215 375 200 360Z"/>
+
+            <circle cx="200" cy="360" r="13"/>
+
+            <path d="M195 370 L170 420 L198 400Z"/>
+            <path d="M205 370 L230 420 L202 400Z"/>
+
+        </g>
+
+        <!-- =========================
+     DETALLE CHAINSAW MAN
+========================= -->
+
+        <!-- =========================
+             ETIQUETA
+        ========================== -->
+
+        <g class="etiqueta-svg">
+
+            <path d="M165 375 L235 375 L225 435 L175 435Z"/>
+
+            <text x="200"
+                  y="398"
+                  text-anchor="middle">
+                PARA
+            </text>
+
+            <text x="200"
+                  y="418"
+                  text-anchor="middle">
+                ESTY ♥
+            </text>
+
+        </g>
+
+    </svg>
+
+</div>
+
+            <button id="botonCarta">
+                Tengo algo que decirte ❤️
+            </button>
+
+        </section>
+
+
+        <!-- Carta -->
+        <section class="carta" id="carta">
+
+            <div class="carta-contenido">
+
+                <span class="corazon">♥</span>
+
+                <h2>Para ti Esty</h2>
+
+                <p>
+                    Hoy se regalan flores amarillas...
+                </p>
+
+                <p>
+                    entonces se me ocurrio esto.
+                </p>
+
+                <p>
+                    Un pequeño detalle hecho especialmente para ti,
+                    porque eres una linda persona y te mereces esto y mas.
+                    No soy muy bueno con las palabras pero que sepas que
+                    te quiero mucho, mas de lo que crees, aunque aveces me cueste
+                    demostrarlo.
+                </p>
+
+                <p>
+                    Espero que estas flores te saquen una sonrisa
+                    y te recuerden lo especial que eres para mí. 🌻
+                </p>
+
+                <div class="firma">
+                    Te ama,<br>
+                    <strong>usmac ❤️</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Música de fondo -->
+<audio id="musicaFondo" loop>
+    <source src="audio/Solare.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Botón de música -->
+<button id="botonMusica" class="boton-musica" aria-label="Activar música">
+    🔇
+</button>
+
+    <script src="script.js"></script>
+
+</body>

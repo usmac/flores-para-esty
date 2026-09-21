@@ -1,0 +1,776 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #302b1d 0%,
+            #141414 45%,
+            #080808 100%
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.contenedor {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+
+.pequeno {
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+
+    color: #d6b84c;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+h1 span {
+    display: inline-block;
+
+    animation:
+        tituloFlor 3s ease-in-out infinite;
+}
+
+
+.subtitulo {
+    color: #c8c8c8;
+
+    font-size: 1rem;
+
+    max-width: 500px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RAMO
+===================================================== */
+
+.ramo {
+    position: relative;
+
+    width: min(390px, 90vw);
+
+    height: 430px;
+
+    margin: 5px auto 0;
+}
+
+.ramo-svg {
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(
+            0 20px 30px rgba(0, 0, 0, .45)
+        );
+}
+
+
+/* =====================================================
+   TALLOS
+===================================================== */
+
+.tallos-svg path {
+    fill: none;
+
+    stroke: #344d25;
+
+    stroke-width: 7;
+
+    stroke-linecap: round;
+
+    opacity: .95;
+}
+
+
+/* =====================================================
+   HOJAS
+===================================================== */
+
+.hojas-svg path {
+    fill: #3f6029;
+
+    stroke: #263b1a;
+
+    stroke-width: 2;
+
+    filter:
+        drop-shadow(
+            0 4px 3px rgba(0, 0, 0, .3)
+        );
+}
+
+
+/* =====================================================
+   PÉTALOS
+===================================================== */
+
+.petalos-svg ellipse {
+    fill: url(#petaloAmarillo);
+
+    stroke: #d49d17;
+
+    stroke-width: 2;
+
+    filter: url(#sombra);
+}
+
+
+/* =====================================================
+   CENTRO DE LAS FLORES
+===================================================== */
+
+.centro-svg {
+    fill: url(#centroFlor);
+
+    stroke: #35200f;
+
+    stroke-width: 3;
+
+    filter:
+        drop-shadow(
+            0 3px 4px rgba(0, 0, 0, .4)
+        );
+}
+
+
+/* =====================================================
+   ANIMACIÓN DE LAS FLORES
+===================================================== */
+
+
+
+
+/* =====================================================
+   ENVOLTURA DEL RAMO
+===================================================== */
+
+.envoltura-svg {
+    fill: #c8b78e;
+
+    stroke: #8e805e;
+
+    stroke-width: 3;
+
+    filter:
+        drop-shadow(
+            0 10px 12px rgba(0, 0, 0, .35)
+        );
+}
+
+
+/* Papel interior */
+
+.papel-interior {
+    fill: #e1d3aa;
+
+    opacity: .75;
+}
+
+
+/* =====================================================
+   LISTÓN
+===================================================== */
+
+.liston-svg path,
+.liston-svg circle {
+    fill: #151515;
+
+    stroke: #050505;
+
+    stroke-width: 3;
+}
+
+
+.liston-svg {
+    filter:
+        drop-shadow(
+            0 5px 5px rgba(0, 0, 0, .45)
+        );
+}
+
+
+/* =====================================================
+   ETIQUETA
+===================================================== */
+
+.etiqueta-svg path {
+    fill: #171717;
+
+    stroke: #3c3c3c;
+
+    stroke-width: 2;
+}
+
+
+.etiqueta-svg text {
+    fill: #e4c84e;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   BOTÓN DE LA CARTA
+===================================================== */
+
+#botonCarta {
+    margin-top: 5px;
+
+    padding: 15px 25px;
+
+    border: 1px solid #d6b84c;
+
+    border-radius: 50px;
+
+    background: rgba(214, 184, 76, .08);
+
+    color: #f1d66b;
+
+    font-family: inherit;
+
+    font-size: .9rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+#botonCarta:hover {
+    background: #d6b84c;
+
+    color: #111;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(214, 184, 76, .25);
+}
+
+
+#botonCarta:active {
+    transform: translateY(0) scale(.97);
+}
+
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+.carta {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+.carta.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+.carta-contenido {
+    width: min(600px, 100%);
+
+    padding: 50px 40px;
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    border:
+        1px solid rgba(214, 184, 76, .3);
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .4);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.corazon {
+    display: block;
+
+    color: #e6bd37;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+    animation:
+        latido 1.5s ease-in-out infinite;
+}
+
+
+.carta h2 {
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+}
+
+
+.carta p {
+    color: #d0d0d0;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+.firma {
+    margin-top: 35px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+}
+
+
+.firma strong {
+    color: #e7c74e;
+}
+
+
+/* =====================================================
+   PÉTALOS QUE CAEN
+===================================================== */
+
+.petalo {
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        caer linear forwards;
+}
+
+
+@keyframes caer {
+
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes tituloFlor {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(4deg);
+    }
+
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-top: 30px;
+    }
+
+
+    .pequeno {
+        font-size: .65rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+
+    .subtitulo {
+        font-size: .9rem;
+    }
+
+
+    .ramo {
+        width: 350px;
+
+        max-width: 100%;
+
+        height: 440px;
+    }
+
+
+    .carta {
+        padding:
+            60px 15px;
+    }
+
+
+    .carta-contenido {
+        padding:
+            40px 25px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .ramo {
+        height: 400px;
+    }
+
+
+    #botonCarta {
+        padding: 13px 20px;
+
+        font-size: .85rem;
+    }
+
+}
+
+/* =====================================================
+   DETALLE CHAINSAW MAN
+===================================================== */
+
+/* =====================================================
+   FLORES INTERACTIVAS
+===================================================== */
+
+.flor-svg {
+    cursor: pointer;
+
+    transition:
+        filter .3s ease;
+}
+
+
+.flor-svg:hover {
+    filter:
+        drop-shadow(
+            0 0 14px rgba(255, 211, 48, .75)
+        );
+
+    cursor: pointer;
+}
+
+
+/* Mensaje que aparece al tocar una flor */
+
+.mensaje-flor {
+    position: fixed;
+
+    left: 50%;
+    bottom: 35px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    width: min(90%, 400px);
+
+    padding: 14px 20px;
+
+    background: rgba(15, 15, 15, .92);
+
+    border:
+        1px solid rgba(228, 200, 78, .6);
+
+    border-radius: 12px;
+
+    color: #f2d45c;
+
+    font-size: .9rem;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.4);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+    z-index: 20;
+}
+
+
+.mensaje-flor.visible {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+/* =====================================================
+   TULIPANES
+===================================================== */
+
+.tulipan-svg {
+    pointer-events: none;
+}
+
+
+/* -------------------------
+   TALLOS
+------------------------- */
+
+.tallo-tulipan {
+    fill: none;
+
+    stroke: #3f702f;
+
+    stroke-width: 6;
+
+    stroke-linecap: round;
+}
+
+
+/* -------------------------
+   HOJAS
+------------------------- */
+
+.hoja-tulipan {
+    fill: #548f3c;
+
+    stroke: #315c28;
+
+    stroke-width: 2;
+
+    filter:
+        drop-shadow(
+            0 2px 2px rgba(0, 0, 0, .25)
+        );
+}
+
+
+/* -------------------------
+   FLORES
+------------------------- */
+
+.flor-tulipan {
+    fill: #da46ff;
+
+    stroke: #4a0a57;
+
+    stroke-width: 2;
+
+    filter:
+        drop-shadow(
+            0 3px 4px rgba(0, 0, 0, .3)
+        );
+}
+
+
+/* Tulipán central */
+
+.tulipan-svg:nth-of-type(2) .flor-tulipan {
+    fill: #f4c2c7;
+}
+
+
+/* Tulipán derecho */
+
+.tulipan-svg:nth-of-type(3) .flor-tulipan {
+    fill: #d94d61;
+}
+/* =====================================================
+   BOTÓN DE MÚSICA
+===================================================== */
+
+.boton-musica {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d6ad28;
+
+    background: rgba(20, 20, 20, 0.85);
+
+    color: #f4c52e;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, .4);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+    z-index: 9999;
+}
+
+
+/* Cuando pasas el mouse */
+
+.boton-musica:hover {
+    transform: scale(1.08);
+
+    background: rgba(40, 40, 40, 0.95);
+
+    box-shadow:
+        0 0 18px rgba(244, 197, 46, .35);
+}
+
+
+/* Cuando haces clic */
+
+.boton-musica:active {
+    transform: scale(.95);
+}
